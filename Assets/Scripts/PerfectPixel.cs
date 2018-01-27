@@ -12,14 +12,16 @@ namespace Complete
         public int referenceOrthographicSize;
         public float referencePixelsPerUnit;
     }
-
+    
     [ExecuteInEditMode]
     public class PerfectPixel : MonoBehaviour
     {
-        [Tooltip("the reference resolution to which your game is made for (e.g. 768px)")]
+        [Tooltip("The reference resolution to which your game is made for (e.g. 768px)")]
         public int referenceOrthographicSize;
+        
         [Tooltip("Reference main PPU (e.g. 32, 64 etc...")]
         public float referencePixelsPerUnit;
+        
         public List<PerfectOverride> overrides;
 
         private int lastSize = 0;
@@ -54,7 +56,7 @@ namespace Complete
             orthoSize /= multiplier;
 
             // set it
-            this.GetComponent<Camera>().orthographicSize = orthoSize;
+            GetComponent<Camera>().orthographicSize = orthoSize;
         }
 
         // Update is called once per frame
@@ -62,7 +64,9 @@ namespace Complete
         {
 #if UNITY_EDITOR
             if (lastSize != Screen.height)
+            {
                 UpdateOrthoSize();
+            }
 #endif
         }
     }

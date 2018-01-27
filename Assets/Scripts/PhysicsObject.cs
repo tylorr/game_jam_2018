@@ -9,7 +9,7 @@ public class PhysicsObject : MonoBehaviour
     protected Vector2 _targetVelocity;
     protected bool _grounded;
     protected Vector2 _groundNormal;
-    protected Rigidbody2D _rb2d;
+    protected Rigidbody2D _rigidBody;
     protected Vector2 _velocity;
     protected ContactFilter2D _contactFilter;
     protected RaycastHit2D[] _hitBuffer = new RaycastHit2D[16];
@@ -20,7 +20,7 @@ public class PhysicsObject : MonoBehaviour
 
     void OnEnable()
     {
-        _rb2d = GetComponent<Rigidbody2D>();
+        _rigidBody = GetComponent<Rigidbody2D>();
     }
 
     void Start()
@@ -28,6 +28,11 @@ public class PhysicsObject : MonoBehaviour
         _contactFilter.useTriggers = false;
         _contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
         _contactFilter.useLayerMask = true;
+    }
+
+    public void Stop()
+    {
+        _velocity = Vector2.zero;
     }
 
     void Update()
@@ -64,7 +69,7 @@ public class PhysicsObject : MonoBehaviour
 
         if (distance > kMinMoveDistance)
         {
-            int count = _rb2d.Cast(move, _contactFilter, _hitBuffer, distance + kShellRadius);
+            int count = _rigidBody.Cast(move, _contactFilter, _hitBuffer, distance + kShellRadius);
             _hitBufferList.Clear();
             for (int i = 0; i < count; i++)
             {
@@ -95,7 +100,7 @@ public class PhysicsObject : MonoBehaviour
             }
         }
 
-        _rb2d.position = _rb2d.position + move.normalized * distance;
+        _rigidBody.position = _rigidBody.position + move.normalized * distance;
     }
 
 }
