@@ -312,6 +312,11 @@ Prefab:
       propertyPath: m_Name
       value: OutletRoomT
       objectReference: {fileID: 0}
+    - target: {fileID: 114290475645111368, guid: cdd03a7d19e2741c0bed90905c63c58a,
+        type: 2}
+      propertyPath: active
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdd03a7d19e2741c0bed90905c63c58a, type: 2}
   m_IsPrefabParent: 0
@@ -13009,9 +13014,26 @@ Prefab:
       propertyPath: m_Name
       value: OutletStatis
       objectReference: {fileID: 0}
+    - target: {fileID: 114290475645111368, guid: cdd03a7d19e2741c0bed90905c63c58a,
+        type: 2}
+      propertyPath: active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212325948215684156, guid: cdd03a7d19e2741c0bed90905c63c58a,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 22875a5288b3e4346b0d1fee3deeb819,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdd03a7d19e2741c0bed90905c63c58a, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1381828701 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114290475645111368, guid: cdd03a7d19e2741c0bed90905c63c58a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1381828700}
+  m_Script: {fileID: 11500000, guid: 9740cf1e563a249c1a47d0db5958dc52, type: 3}
 --- !u!1 &1383142357
 GameObject:
   m_ObjectHideFlags: 0
@@ -17051,7 +17073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 104298851}
   energy: {fileID: 527720352}
-  spawnLocator: {fileID: 770553858}
+  checkpoint: {fileID: 1381828701}
 --- !u!4 &1911531387
 Transform:
   m_ObjectHideFlags: 0

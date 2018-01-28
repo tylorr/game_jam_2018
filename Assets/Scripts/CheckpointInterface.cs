@@ -10,6 +10,7 @@ public interface IActivatable
 [RequireComponent(typeof(PlayerAnimator))]
 public class CheckpointInterface : MonoBehaviour, IActivatable
 {
+    public CheckpointManager checkpointManager;
     private Checkpoint _checkpoint;
     private bool _animating;
     
@@ -22,8 +23,9 @@ public class CheckpointInterface : MonoBehaviour, IActivatable
 
     public bool Activate(Energy energy)
     {
-        if (_checkpoint != null)
+        if (_checkpoint != null && _checkpoint.active)
         {
+            checkpointManager.Use(_checkpoint);
             return _playerAnimator.Plugin(energy);
         }
         return false;

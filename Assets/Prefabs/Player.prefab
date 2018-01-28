@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2f79fab3f07477f82d842dea6bc173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkpointManager: {fileID: 0}
 --- !u!114 &114132449173459196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +261,8 @@ MonoBehaviour:
   accelerationTimeGrounded: 0.1
   moveSpeed: 3
   energy: {fileID: 0}
+  force: {x: 0, y: 0, z: 0}
+  controller: {fileID: 0}
 --- !u!114 &114898278476956300
 MonoBehaviour:
   m_ObjectHideFlags: 1
