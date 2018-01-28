@@ -35,7 +35,7 @@ public class Energy : MonoBehaviour
         AddEnergy(-moveCost * Time.deltaTime);
     }
     
-    private void AddEnergy(float amount)
+    public void AddEnergy(float amount)
     {
         _energy = Mathf.Clamp(_energy + amount, 0, maxEnergy);
     }

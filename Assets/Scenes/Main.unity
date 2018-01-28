@@ -10765,15 +10765,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114092478503313624, guid: e7fcecc826687024e9b52ec763b14088,
+        type: 2}
+      propertyPath: energy
+      value: 
+      objectReference: {fileID: 527720352}
+    - target: {fileID: 1116900248984994, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 114898278476956300, guid: e7fcecc826687024e9b52ec763b14088,
         type: 2}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1278760472}
-    - target: {fileID: 1116900248984994, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 114645911644389286, guid: e7fcecc826687024e9b52ec763b14088,
         type: 2}
       propertyPath: energy

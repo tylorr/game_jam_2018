@@ -13,7 +13,7 @@ public class PlayerPlatformerController : PhysicsObject
 
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
-    private bool _canMove = true;
+    public bool CanMove { get; set; } = true;
 
     void Awake()
     {
@@ -25,16 +25,16 @@ public class PlayerPlatformerController : PhysicsObject
     {
         Stop();
         transform.position = location.position;
-        _canMove = false;
-        await Task.Delay(TimeSpan.FromSeconds(spawnDelay));
-        _canMove = true;
+        CanMove = false;
+        await new WaitForSeconds(spawnDelay);
+        CanMove = true;
     }
 
     protected override void ComputeVelocity()
     {
         var move = Vector2.zero;
 
-        if (_canMove)
+        if (CanMove)
         {
             move.x = Input.GetAxis("Horizontal");
 
