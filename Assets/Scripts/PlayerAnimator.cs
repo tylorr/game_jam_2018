@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
@@ -14,6 +15,8 @@ public class PlayerAnimator : MonoBehaviour
     public float spawnDelay = 1.0f;
 
     public new DeadzoneCamera camera;
+    public Transform carryLocator;
+    public Transform dropLocator;
     
     private PlayerInput _playerInput;
     private Controller2D _controller;
@@ -31,7 +34,7 @@ public class PlayerAnimator : MonoBehaviour
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    
+
     private void Start()
     {
         Settle();
@@ -53,12 +56,14 @@ public class PlayerAnimator : MonoBehaviour
         _animator.SetFloat("velocityX", Mathf.Abs(_player.DirectionalInput.x) / _player.moveSpeed);
     }
 
-    public void Plugin(Energy energy)
+    public bool Plugin(Energy energy)
     {
         if (!_isPlayingBlockingAnimation)
         {
             StartCoroutine(PluginAnimation(energy));
+            return true;
         }
+        return false;
     }
     
     public IEnumerator PluginAnimation(Energy energy)
@@ -97,5 +102,19 @@ public class PlayerAnimator : MonoBehaviour
         _playerInput.enabled = false;
         await new WaitForSeconds(spawnDelay);
         _playerInput.enabled = true;
+    }
+    
+    public void Pickup(Carryable carryable)
+    {
+        carryable.transform.SetParent(carryLocator);
+        carryable.transform.localPosition = Vector3.zero;
+        _animator.SetTrigger("pickup");
+    }
+    
+    public void Putdown(Carryable carryable)
+    {
+        _animator.SetTrigger("putdown");
+        carryable.transform.SetParent(null);
+        carryable.transform.position = dropLocator.position;
     }
 }

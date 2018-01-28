@@ -3,7 +3,7 @@ using System.Collections;
 
 public interface IActivatable
 {
-    void Activate(Energy energy);
+    bool Activate(Energy energy);
     bool Deactivate();
 }
 
@@ -14,19 +14,19 @@ public class CheckpointInterface : MonoBehaviour, IActivatable
     private bool _animating;
     
     private PlayerAnimator _playerAnimator;
-    private Controller2D _controller;
     
     private void Awake()
     {
         _playerAnimator = GetComponent<PlayerAnimator>();
     }
 
-    public void Activate(Energy energy)
+    public bool Activate(Energy energy)
     {
         if (_checkpoint != null)
         {
-            _playerAnimator.Plugin(energy);
+            return _playerAnimator.Plugin(energy);
         }
+        return false;
     }
 
     public bool Deactivate()

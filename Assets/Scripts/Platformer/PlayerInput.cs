@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Player))]
 [RequireComponent(typeof(DoorInterface))]
 [RequireComponent(typeof(CheckpointInterface))]
+[RequireComponent(typeof(CarryInterface))]
 public class PlayerInput : MonoBehaviour
 {
     public Energy energy;
@@ -11,20 +12,23 @@ public class PlayerInput : MonoBehaviour
     private Player _player;
     private DoorInterface _doorInterface;
     private CheckpointInterface _checkpointInterface;
-    
-    private IActivatable holdingObject;
+    private CarryInterface _carryInterface;
+
+    private IActivatable _active = null;
 
     void Awake()
     {
         _player = GetComponent<Player>();
         _doorInterface = GetComponent<DoorInterface>();
         _checkpointInterface = GetComponent<CheckpointInterface>();
+        _carryInterface = GetComponent<CarryInterface>();
     }
 
     void Update()
     {
         var directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         _player.SetDirectionalInput(directionalInput);
+        _carryInterface.SetDirectionalInput(directionalInput);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -41,15 +45,28 @@ public class PlayerInput : MonoBehaviour
             _doorInterface.OnOpenDoorInput();
         }
         
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.E))
+        {
+            _carryInterface.OnCarryInput();
+        }
+        
         if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.F))
         {
-            if (holdingObject != null)
+            if (_active != null)
             {
-                holdingObject.Activate(energy);
+                _active.Deactivate();
+                _active = null;
             }
             else
             {
-                _checkpointInterface.Activate(energy);
+                if (_carryInterface.Activate(energy))
+                {
+                    _active = _carryInterface;
+                }
+                else if (_checkpointInterface.Activate(energy))
+                {
+                    _active = _checkpointInterface;
+                }
             }
         }
     }
