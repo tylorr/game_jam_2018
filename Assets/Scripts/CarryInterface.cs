@@ -49,6 +49,8 @@ public class CarryInterface : MonoBehaviour, IActivatable
 
     public void OnCarryInput()
     {
+        if (!_controller.collisions.below) return;
+        
         if (_touching && !_holding)
         {
             _originalSize = _collider.size;

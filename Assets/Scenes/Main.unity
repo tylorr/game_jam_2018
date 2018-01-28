@@ -8900,6 +8900,17 @@ Prefab:
       propertyPath: m_Name
       value: PDA3
       objectReference: {fileID: 0}
+    - target: {fileID: 114252546581007152, guid: cbe4c54dc85454a458d97ac40b288e48,
+        type: 2}
+      propertyPath: message
+      value: "Crew Log SD 2256.04.22.  It took a while, but the navigation systems
+        are back online. I\u2019ve set a distress beacon, but in order to maintain
+        a signal I\u2019ve shut down power to the rest of the ship. Only the laboratory
+        is still active. I\u2019ve been playing with the toy my son gave me before
+        the mission - a B1B0 unit. It\u2019s cute, but not very useful in a situation
+        like this. At least it is a good listener.  Acting Captain Francis signing
+        off "
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbe4c54dc85454a458d97ac40b288e48, type: 2}
   m_IsPrefabParent: 0
@@ -10945,6 +10956,16 @@ Prefab:
     - target: {fileID: 1717819038062804, guid: cbe4c54dc85454a458d97ac40b288e48, type: 2}
       propertyPath: m_Name
       value: PDA1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114252546581007152, guid: cbe4c54dc85454a458d97ac40b288e48,
+        type: 2}
+      propertyPath: message
+      value: "Crew Log SD 2256.03.19.  Disaster. Ship experienced shield malfunction
+        on takeoff from SC-8102. Impact with space debris destroyed our navigation
+        systems and blew a hole in the bridge. Cpt. Holden didn\u2019t make it.  As
+        acting Captain I have ordered the crew to enter cryofreeze to save resources.
+        I am going to try to bring the navigation systems back online if I can. God
+        help us all.  Acting Captain Francis signing off "
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbe4c54dc85454a458d97ac40b288e48, type: 2}
@@ -14162,6 +14183,19 @@ Prefab:
     - target: {fileID: 4219553428417604, guid: cbe4c54dc85454a458d97ac40b288e48, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114252546581007152, guid: cbe4c54dc85454a458d97ac40b288e48,
+        type: 2}
+      propertyPath: message
+      value: "Crew Log SD 2256.09.04.  I\u2019ve done the math, and it doesn\u2019t
+        look good. With our current power reserves, I can either keep the distress
+        beacon activated for another year, or divert power to the cryo tanks to keep
+        the crew alive. The odds of being rescued by another ship without the beacon
+        are two to the power of 276,709 to one against. But the odds of survival if
+        I turn off the tanks are zero. Either way, this captain is going down with
+        the ship.   If anyone ever hears this, please save the crew. Please let them
+        know I tried my best. And take that little B1B0 unit with you. It\u2019s been
+        a good friend these long lonely months.  Captain Francis signing off  "
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbe4c54dc85454a458d97ac40b288e48, type: 2}
@@ -17796,6 +17830,7 @@ GameObject:
   - component: {fileID: 2065897859}
   - component: {fileID: 2065897858}
   - component: {fileID: 2065897857}
+  - component: {fileID: 2065897861}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -17881,6 +17916,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2065897861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2065897856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f72cef9283f4a99b2f43ac158c7f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  root: {fileID: 989310699}
+  text: {fileID: 483616075}
 --- !u!1 &2082111718
 GameObject:
   m_ObjectHideFlags: 0
