@@ -9,17 +9,14 @@ public class DeadzoneCamera : MonoBehaviour
 {
     public Renderer target;
     public Rect deadzone;
-    public Vector3 smoothPos;
 
-    public Rect[] limits;
+    public List<Rect> limits = new List<Rect>();
 
     protected Camera _camera;
     protected Vector3 _currentVelocity;
 
     public void Start()
     {
-        smoothPos = target.transform.position;
-        smoothPos.z = transform.position.z;
         _currentVelocity = Vector3.zero;
 
         _camera = GetComponent<Camera>();
@@ -30,53 +27,56 @@ public class DeadzoneCamera : MonoBehaviour
         }
     }
 
-    public void Update()
+    public void LateUpdate()
     {
         float localX = target.transform.position.x - transform.position.x;
         float localY = target.transform.position.y - transform.position.y;
 
+        var nextPosition = transform.position;
+
         if (localX < deadzone.xMin)
         {
-            smoothPos.x += localX - deadzone.xMin;
+            nextPosition.x += localX - deadzone.xMin;
         }
         else if (localX > deadzone.xMax)
         {
-            smoothPos.x += localX - deadzone.xMax;
+            nextPosition.x += localX - deadzone.xMax;
         }
 
         if (localY < deadzone.yMin)
         {
-            smoothPos.y += localY - deadzone.yMin;
+            nextPosition.y += localY - deadzone.yMin;
         }
         else if (localY > deadzone.yMax)
         {
-            smoothPos.y += localY - deadzone.yMax;
+            nextPosition.y += localY - deadzone.yMax;
         }
 
         Rect camWorldRect = new Rect();
-        camWorldRect.min = new Vector2(smoothPos.x - _camera.aspect * _camera.orthographicSize, smoothPos.y - _camera.orthographicSize);
-        camWorldRect.max = new Vector2(smoothPos.x + _camera.aspect * _camera.orthographicSize, smoothPos.y + _camera.orthographicSize);
+        camWorldRect.min = new Vector2(nextPosition.x - _camera.aspect * _camera.orthographicSize, nextPosition.y - _camera.orthographicSize);
+        camWorldRect.max = new Vector2(nextPosition.x + _camera.aspect * _camera.orthographicSize, nextPosition.y + _camera.orthographicSize);
 
-        for (int i = 0; i < limits.Length; ++i)
+        bool foundLimits = false;
+        for (int i = 0; i < limits.Count; ++i)
         {
             if (limits[i].Contains(target.transform.position))
             {
                 Vector3 localOffsetMin = limits[i].min + camWorldRect.size * 0.5f;
                 Vector3 localOffsetMax = limits[i].max - camWorldRect.size * 0.5f;
 
-                localOffsetMin.z = localOffsetMax.z = smoothPos.z;
+                localOffsetMin.z = localOffsetMax.z = nextPosition.z;
 
-                smoothPos = Vector3.Max(smoothPos, localOffsetMin);
-                smoothPos = Vector3.Min(smoothPos, localOffsetMax);
-
+                nextPosition = Vector3.Max(nextPosition, localOffsetMin);
+                nextPosition = Vector3.Min(nextPosition, localOffsetMax);
+                foundLimits = true;
                 break;
             }
         }
 
-        Vector3 current = transform.position;
-        current.x = smoothPos.x; // we don't smooth horizontal movement
-
-        transform.position = Vector3.SmoothDamp(current, smoothPos, ref _currentVelocity, 0.1f);
+        if (foundLimits)
+        {
+            transform.position = nextPosition;
+        }
     }
 }
 
@@ -100,7 +100,7 @@ public class DeadZonEditor : Editor
         Color transp = new Color(0, 0, 0, 0);
         Handles.DrawSolidRectangleWithOutline(vert, transp, Color.red);
 
-        for(int i = 0; i < cam.limits.Length; ++i)
+        for(int i = 0; i < cam.limits.Count; ++i)
         {
             Vector3[] vertLimit =
            {

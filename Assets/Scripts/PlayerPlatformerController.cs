@@ -6,6 +6,8 @@ public class PlayerPlatformerController : PhysicsObject
 {
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
+    
+    public float spawnDelay = 0.5f;
 
     public Energy energy;
 
@@ -24,7 +26,7 @@ public class PlayerPlatformerController : PhysicsObject
         Stop();
         transform.position = location.position;
         _canMove = false;
-        await Task.Delay(TimeSpan.FromSeconds(1.0f));
+        await Task.Delay(TimeSpan.FromSeconds(spawnDelay));
         _canMove = true;
     }
 
