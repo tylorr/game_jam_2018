@@ -14,7 +14,6 @@ public class Controller2D : RaycastController
     {
         base.Start();
         collisions.faceDir = 1;
-
     }
 
     public void Move(Vector2 moveAmount, bool standingOnPlatform)
@@ -110,11 +109,7 @@ public class Controller2D : RaycastController
 
                     collisions.left = directionX == -1;
                     collisions.right = directionX == 1;
-
-                    if (i == 0)
-                    {
-                        collisions.horizontalHit = hit;
-                    }
+                    collisions.hitCollider = hit.collider;
                 }
             }
         }
@@ -272,7 +267,7 @@ public class Controller2D : RaycastController
     {
         public bool above, below;
         public bool left, right;
-        public RaycastHit2D horizontalHit;
+        public Collider2D hitCollider;
 
         public bool climbingSlope;
         public bool descendingSlope;

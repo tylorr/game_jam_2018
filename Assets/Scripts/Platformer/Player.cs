@@ -43,6 +43,17 @@ public class Player : MonoBehaviour
         {
             energy.Move();
         }
+        
+        if (controller.collisions.right || controller.collisions.left)
+        {
+            var other = controller.collisions.hitCollider;
+            var otherController = other.GetComponent<Controller2D>();
+            if (otherController != null)
+            {
+                var pushVelocity = new Vector3(_velocity.x * 0.2f, 0, 0);
+                otherController.Move(pushVelocity * Time.deltaTime, Vector2.zero);
+            }
+        }
 
         controller.Move(_velocity * Time.deltaTime, _directionalInput);
 

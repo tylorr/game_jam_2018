@@ -504,6 +504,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &104298851 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114800118098686748, guid: e7fcecc826687024e9b52ec763b14088,
+    type: 2}
+  m_PrefabInternal: {fileID: 1350687629}
+  m_Script: {fileID: 11500000, guid: 6d2e11c84a93f4c94bb4243ae0b13d36, type: 3}
 --- !u!1 &117942181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4513,7 +4519,7 @@ GameObject:
   - component: {fileID: 842600220}
   - component: {fileID: 842600222}
   - component: {fileID: 842600221}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tempasset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10861,7 +10867,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4566797654940672, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.91
+      value: 2.83
       objectReference: {fileID: 0}
     - target: {fileID: 4566797654940672, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10887,12 +10893,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114618031442420424, guid: e7fcecc826687024e9b52ec763b14088,
+    - target: {fileID: 114836988875630616, guid: e7fcecc826687024e9b52ec763b14088,
         type: 2}
       propertyPath: energy
       value: 
       objectReference: {fileID: 527720352}
-    - target: {fileID: 114836988875630616, guid: e7fcecc826687024e9b52ec763b14088,
+    - target: {fileID: 114618031442420424, guid: e7fcecc826687024e9b52ec763b14088,
         type: 2}
       propertyPath: energy
       value: 
@@ -12655,6 +12661,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1687771356037562, guid: c41e182071a4745bb8ae8e1ccaea4a31, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c41e182071a4745bb8ae8e1ccaea4a31, type: 2}
   m_IsPrefabParent: 0
@@ -13763,6 +13773,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1750126504 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1687771356037562, guid: c41e182071a4745bb8ae8e1ccaea4a31,
+    type: 2}
+  m_PrefabInternal: {fileID: 1661176256}
+--- !u!114 &1750126505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1750126504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ae0c3d7722a4bc0b743f08432e661a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 256
+  horizontalRayCount: 0
+  verticalRayCount: 0
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
+  collider: {fileID: 0}
+  maxSlopeAngle: 80
+  playerInput: {x: 0, y: 0}
 --- !u!1 &1757062006
 GameObject:
   m_ObjectHideFlags: 0
@@ -14871,7 +14907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6828eb8af5bad46648461bf1817d9474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 0}
+  playerAnimator: {fileID: 104298851}
   energy: {fileID: 527720352}
   spawnLocator: {fileID: 352645522}
 --- !u!4 &1911531387
