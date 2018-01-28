@@ -182,11 +182,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxJumpHeight: 1.5
-  minJumpHeight: 0.3
+  minJumpHeight: 0.5
   timeToJumpApex: 0.3
   accelerationTimeAirborne: 0.2
   accelerationTimeGrounded: 0.1
-  moveSpeed: 5
+  moveSpeed: 3
   energy: {fileID: 0}
 --- !u!114 &114898278476956300
 MonoBehaviour:
