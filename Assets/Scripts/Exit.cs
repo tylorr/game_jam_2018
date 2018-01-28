@@ -12,6 +12,8 @@ public class Exit : MonoBehaviour
         if (player != null)
         {
             player.Respawn(door.spawnLocator);
+
+            FindObjectOfType<SystemMessager>().Hide();
         }
     }
 }

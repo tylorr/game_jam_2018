@@ -15,6 +15,7 @@ public class Checkpoint : MonoBehaviour
         if (active)
         {
             GetComponent<SpriteRenderer>().sprite = outletOn;
+            FindObjectOfType<SystemMessager>().Show(message);
         }
     }
     

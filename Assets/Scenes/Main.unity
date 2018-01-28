@@ -6004,6 +6004,13 @@ Prefab:
       propertyPath: next
       value: 
       objectReference: {fileID: 811055160}
+    - target: {fileID: 114290475645111368, guid: cdd03a7d19e2741c0bed90905c63c58a,
+        type: 2}
+      propertyPath: message
+      value: 'UNSS Franklin hailing unidentified spacecraft. We read life signs on
+        board your vessel. Are you in distress? Please confirm. UNSS Franklin standing
+        by to provide assistance if signaled.   Are you guys there?    Over.  '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdd03a7d19e2741c0bed90905c63c58a, type: 2}
   m_IsPrefabParent: 0
@@ -8804,7 +8811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &990140299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9086,6 +9093,13 @@ Prefab:
       propertyPath: next
       value: 
       objectReference: {fileID: 1606754546}
+    - target: {fileID: 114290475645111368, guid: cdd03a7d19e2741c0bed90905c63c58a,
+        type: 2}
+      propertyPath: message
+      value: 'INCOMING TRANSMISSION UNSS Franklin hailing unidentified spacecraft.
+        We observe that your ship is damaged, but our sensors are reading a power
+        surge from amidships. Do you require aid? Please respond.   Over.   '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cdd03a7d19e2741c0bed90905c63c58a, type: 2}
   m_IsPrefabParent: 0
@@ -17831,6 +17845,7 @@ GameObject:
   - component: {fileID: 2065897858}
   - component: {fileID: 2065897857}
   - component: {fileID: 2065897861}
+  - component: {fileID: 2065897862}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -17929,6 +17944,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   root: {fileID: 989310699}
   text: {fileID: 483616075}
+--- !u!114 &2065897862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2065897856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c93ad024b114f9dbabb13a9f1eb358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  root: {fileID: 990140298}
+  text: {fileID: 1295822820}
 --- !u!1 &2082111718
 GameObject:
   m_ObjectHideFlags: 0
