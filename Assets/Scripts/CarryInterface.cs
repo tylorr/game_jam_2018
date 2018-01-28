@@ -32,7 +32,7 @@ public class CarryInterface : MonoBehaviour, IActivatable
     {
         if (_holding != null)
         {
-            return _holding.Activate(energy);
+            return _holding.Activate(GetComponent<Player>(), energy);
         }
         return false;
     }

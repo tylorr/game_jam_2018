@@ -4658,6 +4658,7 @@ MonoBehaviour:
   maxEnergy: 100
   jumpCost: 5
   moveCost: 5
+  magnetCost: 5
   energyBar: {fileID: 268945855}
 --- !u!1 &531374244
 GameObject:
@@ -16548,7 +16549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 104298851}
   energy: {fileID: 527720352}
-  spawnLocator: {fileID: 0}
+  spawnLocator: {fileID: 770553858}
 --- !u!4 &1911531387
 Transform:
   m_ObjectHideFlags: 0

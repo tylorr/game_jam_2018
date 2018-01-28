@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     public float accelerationTimeGrounded = .1f;
     public float moveSpeed = 6;
 
+    public bool EnableMovement { get; set; } = true;
+    public bool EnableGravity { get; set; } = true;
+
     public Energy energy;
     
     private Vector3 _velocity;
@@ -20,8 +23,12 @@ public class Player : MonoBehaviour
     float maxJumpVelocity;
     float minJumpVelocity;
     float velocityXSmoothing;
+    
+    [HideInInspector]
+    public Vector3 force;
 
-    Controller2D controller;
+    [HideInInspector]
+    public Controller2D controller;
 
     private Vector2 _directionalInput;
     public Vector2 DirectionalInput => _directionalInput;
@@ -39,7 +46,7 @@ public class Player : MonoBehaviour
     {
         CalculateVelocity();
         
-        if (_directionalInput.x > 0.0f)
+        if (Mathf.Abs(_directionalInput.x) > 0.0f)
         {
             energy.Move();
         }
@@ -113,8 +120,17 @@ public class Player : MonoBehaviour
 
     void CalculateVelocity()
     {
-        float targetVelocityX = _directionalInput.x * moveSpeed;
+        float targetVelocityX = EnableMovement ? _directionalInput.x * moveSpeed : 0;
         _velocity.x = Mathf.SmoothDamp(_velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
-        _velocity.y += gravity * Time.deltaTime;
+
+        if (EnableGravity)
+        {
+            _velocity.y += gravity * Time.deltaTime;
+        }
+        else
+        {
+            _velocity.y = 0;
+        }
+        _velocity += force * Time.deltaTime;
     }
 }

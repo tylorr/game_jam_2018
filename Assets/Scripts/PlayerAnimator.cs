@@ -51,6 +51,12 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
+        //var dirx = _player.DirectionalInput.x;
+        //var shouldFlip = !_spriteRenderer.flipX ? dirx < -0.001f : dirx > 0.001f;
+        //if (shouldFlip)
+        //{
+        //    _spriteRenderer.flipX = !_spriteRenderer.flipX;
+        //}
         _spriteRenderer.flipX = _controller.collisions.faceDir > 0 ? false : true;
         _animator.SetBool("grounded", _controller.collisions.below);
         _animator.SetFloat("velocityX", Mathf.Abs(_player.DirectionalInput.x) / _player.moveSpeed);

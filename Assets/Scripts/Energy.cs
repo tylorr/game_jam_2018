@@ -7,6 +7,7 @@ public class Energy : MonoBehaviour
     public float maxEnergy;
     public float jumpCost;
     public float moveCost;
+    public float magnetCost;
     
     public Slider energyBar;
     
@@ -43,5 +44,10 @@ public class Energy : MonoBehaviour
     private void Update()
     {
         energyBar.value = Mathf.InverseLerp(0, maxEnergy, _energy);
+    }
+
+    internal void UseMagnet()
+    {
+        AddEnergy(-magnetCost * Time.deltaTime);
     }
 }
