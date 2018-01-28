@@ -2,7 +2,7 @@
 
 public class CheckpointManager : MonoBehaviour
 {
-    public PlayerPlatformerController player;
+    public PlayerAnimator playerAnimator;
     public Energy energy;
     public Transform spawnLocator;
     
@@ -11,7 +11,7 @@ public class CheckpointManager : MonoBehaviour
         if (energy.Empty)
         {
             energy.Restore();
-            player.Respawn(spawnLocator);
+            playerAnimator.Respawn(spawnLocator);
         }
     }
 }

@@ -7,7 +7,7 @@ public class Exit : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        var player = collision.GetComponent<PlayerPlatformerController>();
+        var player = collision.GetComponent<PlayerAnimator>();
         if (player != null)
         {
             var door = GetComponent<Door>();

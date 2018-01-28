@@ -1,51 +1,32 @@
 ﻿using UnityEngine;
-using UniRx;
+using System.Collections;
 
 public interface IActivatable
 {
-    bool Activate(Energy energy);
+    void Activate(Energy energy);
     bool Deactivate();
 }
 
+[RequireComponent(typeof(PlayerAnimator))]
 public class CheckpointInterface : MonoBehaviour, IActivatable
 {
-    public float chargeDuration = 5.0f;
-    public float pluginDuration = 1.5f;
-    public Animator animator;
-    public PlayerPlatformerController player;
-    
     private Checkpoint _checkpoint;
     private bool _animating;
-
-    public bool Activate(Energy energy)
+    
+    private PlayerAnimator _playerAnimator;
+    private Controller2D _controller;
+    
+    private void Awake()
     {
-        if (_checkpoint != null && !_animating)
-        {
-            Animate(energy);
-            return true;
-        }
-        return false;
+        _playerAnimator = GetComponent<PlayerAnimator>();
     }
 
-    private async void Animate(Energy energy)
+    public void Activate(Energy energy)
     {
-        _animating = true;
-        player.CanMove = false;
-        
-        animator.SetTrigger("plugin");
-        
-        await new WaitForSeconds(pluginDuration);
-
-        // TODO: Animate energy
-        energy.AddEnergy(energy.maxEnergy);
-        await new WaitForSeconds(chargeDuration - pluginDuration);
-
-        animator.SetTrigger("unplug");
-        var unplugDuration = animator.GetCurrentAnimatorStateInfo(0).length;
-        await new WaitForSeconds(unplugDuration);
-
-        player.CanMove = true;
-        _animating = false;
+        if (_checkpoint != null)
+        {
+            _playerAnimator.Plugin(energy);
+        }
     }
 
     public bool Deactivate()

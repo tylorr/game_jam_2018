@@ -1,23 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
+[RequireComponent(typeof(PlayerAnimator))]
 public class DoorInterface : MonoBehaviour
 {
-    public new DeadzoneCamera camera;
+    private PlayerAnimator _animator;
     private Door _door;
-    
-    void Update()
+
+    private void Awake()
     {
-        if (_door != null && Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            var room = _door.room;
-            camera.limits.Add(room.GetBoundingRect());
-            GetComponent<PlayerPlatformerController>().Respawn(room.spawnLocation);
-        }
+        _animator = GetComponent<PlayerAnimator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Started touching door");
         _door = collision.GetComponent<Door>();
     }
 
@@ -25,8 +21,15 @@ public class DoorInterface : MonoBehaviour
     {
         if (collision.GetComponent<Door>() != null)
         {
-            Debug.Log("Stopped touching door");
             _door = null;
+        }
+    }
+
+    public void OnOpenDoorInput()
+    {
+        if (_door != null)
+        {
+            _animator.EnterRoom(_door.room);
         }
     }
 }
