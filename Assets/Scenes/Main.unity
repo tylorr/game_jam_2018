@@ -4597,7 +4597,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SAMPLE TEXT
+  m_Text: "Crew Log SD 2256.03.19. \nDisaster. Impact with space debris destroyed
+    our navigation systems and blew a hole in the bridge. I have ordered the crew
+    to enter cryofreeze to save resources. Will try to bring the navigation systems
+    back online. God help us all. \n"
 --- !u!222 &483616076
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9330,13 +9333,10 @@ Prefab:
     - target: {fileID: 114252546581007152, guid: cbe4c54dc85454a458d97ac40b288e48,
         type: 2}
       propertyPath: message
-      value: "Crew Log SD 2256.04.22.  It took a while, but the navigation systems
-        are back online. I\u2019ve set a distress beacon, but in order to maintain
-        a signal I\u2019ve shut down power to the rest of the ship. Only the laboratory
-        is still active. I\u2019ve been playing with the toy my son gave me before
-        the mission - a B1B0 unit. It\u2019s cute, but not very useful in a situation
-        like this. At least it is a good listener.  Acting Captain Francis signing
-        off "
+      value: "Crew Log SD 2256.04.22.  I\u2019ve shut down power to the rest of the
+        ship to boost our distress signal. Only the laboratory is still active. I\u2019ve
+        been playing with the toy my son gave me - a B1B0 unit. It\u2019s cute, but
+        not very useful. At least it\u2019s a good listener."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbe4c54dc85454a458d97ac40b288e48, type: 2}
@@ -9516,9 +9516,9 @@ Prefab:
     - target: {fileID: 114290475645111368, guid: cdd03a7d19e2741c0bed90905c63c58a,
         type: 2}
       propertyPath: message
-      value: 'INCOMING TRANSMISSION UNSS Franklin hailing unidentified spacecraft.
-        We observe that your ship is damaged, but our sensors are reading a power
-        surge from amidships. Do you require aid? Please respond.   Over.   '
+      value: 'UNSS Franklin hailing unidentified spacecraft. We observe that your
+        ship is damaged, but our sensors are reading a power surge from amidships.
+        Do you require aid? Please respond.   Over.   '
       objectReference: {fileID: 0}
     - target: {fileID: 114290475645111368, guid: cdd03a7d19e2741c0bed90905c63c58a,
         type: 2}
@@ -11401,12 +11401,10 @@ Prefab:
     - target: {fileID: 114252546581007152, guid: cbe4c54dc85454a458d97ac40b288e48,
         type: 2}
       propertyPath: message
-      value: "Crew Log SD 2256.03.19.  Disaster. Ship experienced shield malfunction
-        on takeoff from SC-8102. Impact with space debris destroyed our navigation
-        systems and blew a hole in the bridge. Cpt. Holden didn\u2019t make it.  As
-        acting Captain I have ordered the crew to enter cryofreeze to save resources.
-        I am going to try to bring the navigation systems back online if I can. God
-        help us all.  Acting Captain Francis signing off "
+      value: Crew Log SD 2256.03.19.  Disaster. Impact with space debris destroyed
+        our navigation systems and blew a hole in the bridge. I have ordered the crew
+        to enter cryofreeze to save resources. Will try to bring the navigation systems
+        back online. God help us all.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbe4c54dc85454a458d97ac40b288e48, type: 2}
@@ -14639,15 +14637,11 @@ Prefab:
     - target: {fileID: 114252546581007152, guid: cbe4c54dc85454a458d97ac40b288e48,
         type: 2}
       propertyPath: message
-      value: "Crew Log SD 2256.09.04.  I\u2019ve done the math, and it doesn\u2019t
-        look good. With our current power reserves, I can either keep the distress
-        beacon activated for another year, or divert power to the cryo tanks to keep
-        the crew alive. The odds of being rescued by another ship without the beacon
-        are two to the power of 276,709 to one against. But the odds of survival if
-        I turn off the tanks are zero. Either way, this captain is going down with
-        the ship.   If anyone ever hears this, please save the crew. Please let them
-        know I tried my best. And take that little B1B0 unit with you. It\u2019s been
-        a good friend these long lonely months.  Captain Francis signing off  "
+      value: Crew Log SD 2256.09.04.  With our current power reserves, I can either
+        keep the distress beacon activated for six months, or divert power to the
+        cryo tanks to keep the crew alive. The odds of being rescued without the beacon
+        are slim, but the crew comes first. Looks like this captain is going down
+        with the ship.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbe4c54dc85454a458d97ac40b288e48, type: 2}
