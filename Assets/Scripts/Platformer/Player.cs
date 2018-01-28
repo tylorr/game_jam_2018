@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
     }
 
-    void Update()
+    public void Update()
     {
         CalculateVelocity();
         

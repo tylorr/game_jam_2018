@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
@@ -32,6 +30,20 @@ public class PlayerAnimator : MonoBehaviour
         _controller = GetComponent<Controller2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    
+    private void Start()
+    {
+        Settle();
+    }
+
+    private void Settle()
+    {
+        _player.Update();
+        while (!_controller.collisions.below)
+        {
+            _player.Update();
+        }
     }
 
     private void Update()
@@ -87,6 +99,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         _player.Stop();
         transform.position = location.position;
+        Settle();
         _playerInput.enabled = false;
         await new WaitForSeconds(spawnDelay);
         _playerInput.enabled = true;
