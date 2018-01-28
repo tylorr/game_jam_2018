@@ -423,6 +423,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad879465689524b4eaff8077205ae5eb, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &87663960 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114098072804676634, guid: ad879465689524b4eaff8077205ae5eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 403751198}
+  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
 --- !u!1 &98152509
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,8 +439,6 @@ GameObject:
   - component: {fileID: 98152510}
   - component: {fileID: 98152514}
   - component: {fileID: 98152513}
-  - component: {fileID: 98152512}
-  - component: {fileID: 98152511}
   m_Layer: 8
   m_Name: LeftWallCollider
   m_TagString: Untagged
@@ -455,29 +459,6 @@ Transform:
   m_Father: {fileID: 1801816161}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &98152511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 98152509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7d0d2af9ea9e4e6b9289e1f0e4b6ae8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &98152512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 98152509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 1501962991}
 --- !u!61 &98152513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -832,6 +813,12 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &186369552 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114098072804676634, guid: ad879465689524b4eaff8077205ae5eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 645475563}
+  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
 --- !u!1 &215070860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1147,6 @@ GameObject:
   - component: {fileID: 267939841}
   - component: {fileID: 267939845}
   - component: {fileID: 267939844}
-  - component: {fileID: 267939843}
   - component: {fileID: 267939842}
   m_Layer: 8
   m_Name: DoorCollider
@@ -1193,18 +1179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d0d2af9ea9e4e6b9289e1f0e4b6ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &267939843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 267939840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 1501962991}
+  door: {fileID: 87663960}
 --- !u!61 &267939844
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2053,7 +2028,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 395470144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.62, y: -3.41, z: 0}
+  m_LocalPosition: {x: -5.62, y: -2.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1911139412}
@@ -2979,7 +2954,6 @@ GameObject:
   - component: {fileID: 499776162}
   - component: {fileID: 499776166}
   - component: {fileID: 499776165}
-  - component: {fileID: 499776164}
   - component: {fileID: 499776163}
   m_Layer: 8
   m_Name: DoorCollider
@@ -3012,18 +2986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d0d2af9ea9e4e6b9289e1f0e4b6ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &499776164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 499776161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 1501962991}
+  door: {fileID: 1278240174}
 --- !u!61 &499776165
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3142,7 +3105,6 @@ GameObject:
   - component: {fileID: 514952713}
   - component: {fileID: 514952717}
   - component: {fileID: 514952716}
-  - component: {fileID: 514952715}
   - component: {fileID: 514952714}
   m_Layer: 8
   m_Name: DoorCollider
@@ -3175,18 +3137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d0d2af9ea9e4e6b9289e1f0e4b6ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &514952715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 514952712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 1501962991}
+  door: {fileID: 549295531}
 --- !u!61 &514952716
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3419,6 +3370,12 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &549295531 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114098072804676634, guid: ad879465689524b4eaff8077205ae5eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1998077059}
+  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
 --- !u!4 &550114387 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4824237499911340, guid: cdd03a7d19e2741c0bed90905c63c58a,
@@ -5096,7 +5053,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 914885766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.62, y: -3.41, z: 0}
+  m_LocalPosition: {x: -5.62, y: -2.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1325237628}
@@ -6654,7 +6611,6 @@ GameObject:
   - component: {fileID: 1129483740}
   - component: {fileID: 1129483744}
   - component: {fileID: 1129483743}
-  - component: {fileID: 1129483742}
   - component: {fileID: 1129483741}
   m_Layer: 8
   m_Name: DoorCollider
@@ -6687,18 +6643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d0d2af9ea9e4e6b9289e1f0e4b6ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1129483742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1129483739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 1501962991}
+  door: {fileID: 1355229951}
 --- !u!61 &1129483743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10291,6 +10236,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1256961361 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114098072804676634, guid: ad879465689524b4eaff8077205ae5eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 777652923}
+  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
 --- !u!1 &1257612759
 GameObject:
   m_ObjectHideFlags: 0
@@ -10572,6 +10523,12 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1278240174 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114098072804676634, guid: ad879465689524b4eaff8077205ae5eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 77666949}
+  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
 --- !u!114 &1278760472 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114123390247084860, guid: 0f387d2a5577afa47b4f87e4e846f091,
@@ -10588,7 +10545,6 @@ GameObject:
   - component: {fileID: 1310964639}
   - component: {fileID: 1310964641}
   - component: {fileID: 1310964640}
-  - component: {fileID: 1310964643}
   - component: {fileID: 1310964642}
   m_Layer: 8
   m_Name: DoorCollider
@@ -10666,18 +10622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d0d2af9ea9e4e6b9289e1f0e4b6ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1310964643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1310964638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 1501962991}
+  door: {fileID: 1256961361}
 --- !u!1 &1316435024
 GameObject:
   m_ObjectHideFlags: 0
@@ -10912,11 +10857,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4566797654940672, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.9
+      value: -15.47
       objectReference: {fileID: 0}
     - target: {fileID: 4566797654940672, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.34
+      value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 4566797654940672, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10924,15 +10869,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4566797654940672, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4566797654940672, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4566797654940672, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4566797654940672, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
       propertyPath: m_LocalRotation.w
@@ -10942,26 +10887,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114092478503313624, guid: e7fcecc826687024e9b52ec763b14088,
-        type: 2}
-      propertyPath: energy
-      value: 
-      objectReference: {fileID: 527720352}
-    - target: {fileID: 1116900248984994, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 114898278476956300, guid: e7fcecc826687024e9b52ec763b14088,
-        type: 2}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 1278760472}
-    - target: {fileID: 114645911644389286, guid: e7fcecc826687024e9b52ec763b14088,
-        type: 2}
-      propertyPath: energy
-      value: 
-      objectReference: {fileID: 527720352}
     - target: {fileID: 114618031442420424, guid: e7fcecc826687024e9b52ec763b14088,
+        type: 2}
+      propertyPath: energy
+      value: 
+      objectReference: {fileID: 527720352}
+    - target: {fileID: 114836988875630616, guid: e7fcecc826687024e9b52ec763b14088,
         type: 2}
       propertyPath: energy
       value: 
@@ -10971,14 +10902,15 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1278760472}
-    - target: {fileID: 114836988875630616, guid: e7fcecc826687024e9b52ec763b14088,
-        type: 2}
-      propertyPath: energy
-      value: 
-      objectReference: {fileID: 527720352}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7fcecc826687024e9b52ec763b14088, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1355229951 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114098072804676634, guid: ad879465689524b4eaff8077205ae5eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 350848052}
+  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
 --- !u!1 &1357046082
 GameObject:
   m_ObjectHideFlags: 0
@@ -11019,8 +10951,6 @@ GameObject:
   - component: {fileID: 1357121980}
   - component: {fileID: 1357121984}
   - component: {fileID: 1357121983}
-  - component: {fileID: 1357121982}
-  - component: {fileID: 1357121981}
   m_Layer: 8
   m_Name: LeftWallCollider
   m_TagString: Untagged
@@ -11041,29 +10971,6 @@ Transform:
   m_Father: {fileID: 1256394498}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1357121981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1357121979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7d0d2af9ea9e4e6b9289e1f0e4b6ae8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1357121982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1357121979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 1501962991}
 --- !u!61 &1357121983
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11320,7 +11227,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1380169078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.62, y: -3.41, z: 0}
+  m_LocalPosition: {x: -5.62, y: -2.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1172042238}
@@ -11430,8 +11337,6 @@ GameObject:
   - component: {fileID: 1386586767}
   - component: {fileID: 1386586771}
   - component: {fileID: 1386586770}
-  - component: {fileID: 1386586769}
-  - component: {fileID: 1386586768}
   m_Layer: 8
   m_Name: LeftWallCollider
   m_TagString: Untagged
@@ -11452,29 +11357,6 @@ Transform:
   m_Father: {fileID: 709199551}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1386586768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1386586766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7d0d2af9ea9e4e6b9289e1f0e4b6ae8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1386586769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1386586766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 1501962991}
 --- !u!61 &1386586770
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11697,8 +11579,6 @@ GameObject:
   - component: {fileID: 1419503772}
   - component: {fileID: 1419503776}
   - component: {fileID: 1419503775}
-  - component: {fileID: 1419503774}
-  - component: {fileID: 1419503773}
   m_Layer: 8
   m_Name: LeftWallCollider
   m_TagString: Untagged
@@ -11719,29 +11599,6 @@ Transform:
   m_Father: {fileID: 1891877336}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1419503773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1419503771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7d0d2af9ea9e4e6b9289e1f0e4b6ae8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1419503774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1419503771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 1501962991}
 --- !u!61 &1419503775
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11942,7 +11799,6 @@ GameObject:
   - component: {fileID: 1491962615}
   - component: {fileID: 1491962619}
   - component: {fileID: 1491962618}
-  - component: {fileID: 1491962617}
   - component: {fileID: 1491962616}
   m_Layer: 8
   m_Name: DoorCollider
@@ -11975,18 +11831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d0d2af9ea9e4e6b9289e1f0e4b6ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1491962617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1491962614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 1501962991}
+  door: {fileID: 186369552}
 --- !u!61 &1491962618
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12390,7 +12235,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1583680792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.62, y: -3.41, z: 0}
+  m_LocalPosition: {x: -5.62, y: -2.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1900227028}
@@ -15490,7 +15335,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1999970611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.62, y: -3.41, z: 0}
+  m_LocalPosition: {x: -5.62, y: -2.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1383142358}
@@ -15976,8 +15821,6 @@ GameObject:
   - component: {fileID: 2101508232}
   - component: {fileID: 2101508236}
   - component: {fileID: 2101508235}
-  - component: {fileID: 2101508234}
-  - component: {fileID: 2101508233}
   m_Layer: 8
   m_Name: LeftWallCollider
   m_TagString: Untagged
@@ -15998,29 +15841,6 @@ Transform:
   m_Father: {fileID: 920841911}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2101508233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2101508231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7d0d2af9ea9e4e6b9289e1f0e4b6ae8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2101508234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2101508231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece53e305167640ed9f9391d5a3c6e11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 1501962991}
 --- !u!61 &2101508235
 BoxCollider2D:
   m_ObjectHideFlags: 0

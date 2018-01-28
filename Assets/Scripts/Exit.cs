@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Door))]
 public class Exit : MonoBehaviour
 {
+    public Door door;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var player = collision.GetComponent<PlayerAnimator>();
         if (player != null)
         {
-            var door = GetComponent<Door>();
-            var room = door.room;
-            player.Respawn(room.spawnLocation);
+            player.Respawn(door.spawnLocator);
         }
     }
 }
