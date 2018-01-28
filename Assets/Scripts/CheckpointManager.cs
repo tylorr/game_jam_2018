@@ -18,7 +18,7 @@ public class CheckpointManager : MonoBehaviour
 
     public void Use(Checkpoint checkpoint)
     {
-        checkpoint.next.TurnOn();
+        checkpoint.next?.TurnOn();
         this.checkpoint = checkpoint;
     }
 }
