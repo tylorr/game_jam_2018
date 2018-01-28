@@ -56,7 +56,7 @@ public class Controller2D : RaycastController
 
     void HorizontalCollisions(ref Vector2 moveAmount)
     {
-        float directionX = collisions.faceDir;
+        int directionX = collisions.faceDir;
         float rayLength = Mathf.Abs(moveAmount.x) + skinWidth;
 
         if (Mathf.Abs(moveAmount.x) < skinWidth)
@@ -74,8 +74,7 @@ public class Controller2D : RaycastController
 
             if (hit)
             {
-
-                if (hit.distance == 0)
+                if (hit.distance < Mathf.Epsilon || hit.collider.tag == "Through")
                 {
                     continue;
                 }
@@ -111,6 +110,11 @@ public class Controller2D : RaycastController
 
                     collisions.left = directionX == -1;
                     collisions.right = directionX == 1;
+
+                    if (i == 0)
+                    {
+                        collisions.horizontalHit = hit;
+                    }
                 }
             }
         }
@@ -118,7 +122,7 @@ public class Controller2D : RaycastController
 
     void VerticalCollisions(ref Vector2 moveAmount)
     {
-        float directionY = Mathf.Sign(moveAmount.y);
+        var directionY = (int)Mathf.Sign(moveAmount.y);
         float rayLength = Mathf.Abs(moveAmount.y) + skinWidth;
 
         for (int i = 0; i < verticalRayCount; i++)
@@ -268,6 +272,7 @@ public class Controller2D : RaycastController
     {
         public bool above, below;
         public bool left, right;
+        public RaycastHit2D horizontalHit;
 
         public bool climbingSlope;
         public bool descendingSlope;
