@@ -26,6 +26,7 @@ public class CheckpointInterface : MonoBehaviour, IActivatable
         if (_checkpoint != null && _checkpoint.active)
         {
             checkpointManager.Use(_checkpoint);
+            FindObjectOfType<SystemMessager>().Show(_checkpoint.message);
             return _playerAnimator.Plugin(energy);
         }
         return false;
